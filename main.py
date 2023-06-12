@@ -2,7 +2,7 @@ from fastapi import FastAPI
 import numpy as np
 import pandas as pd
 
-df_complete = pd.read_csv(complete_movies_and_credits.csv', sep=',')
+df_complete = pd.read_csv(https://github.com/RodoArellano/Proyecto_Movies_1/blob/main/complete_movies_and_credits.csv', sep=',')
 
 app = FastAPI()
 
