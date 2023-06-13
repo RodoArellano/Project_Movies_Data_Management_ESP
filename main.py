@@ -5,8 +5,6 @@ import pandas as pd
 #df_complete = pd.read_csv(r'C:\Users\rodal\Documents\Henry_DS_FT_11\Course_HW\Proyecto_Movies_1\ETL_Project_1\complete_movies_and_credits_db.csv', sep=',')
 df_complete = pd.read_csv('https://github.com/RodoArellano/Proyecto_Movies_1/blob/main/complete_movies_and_credits.csv', sep=',', lineterminator='\r')
 
-df_complete = df_complete.drop(index=45451)
-
 app = FastAPI()
 
 @app.get('/')
