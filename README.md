@@ -27,7 +27,8 @@ Se puede encontrar el archivo en este repositorio con el nombre de 'complete_mov
 3.- EDA (Análisis exploratorio de datos):
 
 El análisis será referente al comportamiento e información de las columnas 'popularity' y 'budget':
-Como podemos obserbar en la primera imagen mostrada a continuación, se tiene una agrupación en la parte inferior de la gráfica, esto se debe a la presencia de outliers, es decir datos que se salen del comportamiento estandar y afectan a las mediciones. En este caso no se analizará si es o no un error, porque puede que sean correctos y una anomalía.
+
+Como podemos observar en la primera imagen mostrada a continuación, se tiene una agrupación en la parte inferior de la gráfica, esto se debe a la presencia de outliers, es decir datos que se salen del comportamiento estandar y afectan a las mediciones. En este caso no se analizará si es o no un error, porque puede que sean correctos y una anomalía.
 
 ![Scatter1_with_outliers](https://github.com/RodoArellano/Proyecto_Movies_1/assets/125421658/588e14f9-0c51-45f9-bff6-cf07e27bc204)
 
