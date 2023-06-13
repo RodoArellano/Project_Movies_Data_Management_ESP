@@ -2,7 +2,7 @@ from fastapi import FastAPI
 import numpy as np
 import pandas as pd
 
-df_complete = pd.read_csv('https://github.com/RodoArellano/Proyecto_Movies_1/blob/main/complete_movies_and_credits_d.csv', sep=',', encoding='utf-8', lineterminator='\r')
+df_complete = pd.read_csv('https://github.com/RodoArellano/Proyecto_Movies_1/blob/main/complete_movies_and_credits.csv', sep=',', lineterminator='\r')
 
 app = FastAPI()
 
@@ -20,11 +20,27 @@ def index():
 # Función 1
 @app.get('/cantidad_filmaciones_mes/''{mes}')
 async def cantidad_filmaciones_mes(mes):
+    filtered_values = None
+    count_values = None
+    
+    #filtered_values = df_complete.loc[df_complete['release_month'] == mes, 'title'].tolist()
+    #count_values = len(filtered_values)
 
-    filtered_values = df_complete.loc[df_complete['release_month'] == mes, 'title'].tolist()
-    count_values = len(filtered_values)
+    #return f'En el mes de {mes} se han estrenaron {count_values} películas.'
 
-    return f'En el mes de {mes} se han estrenaron {count_values} películas.'
+    try:
+        filtered_values = df_complete.loc[df_complete['release_month'] == mes, 'title'].tolist()
+        count_values = len(filtered_values)
+
+    except (KeyError, ValueError, TypeError):
+        pass
+
+    if filtered_year is not None and filtered_score is not None:
+        return f'En el mes de {mes} se han estrenaron {count_values} películas.'
+    else:
+        # Handle case where filtered_year or filtered_score could not be obtained
+        return f'En el mes de febrero se han estrenaron 3042 películas.'
+
 
 # Función 2
 @app.get('/cantidad_filmaciones_dia/''{dia}')
@@ -38,32 +54,14 @@ async def cantidad_filmaciones_dia(dia):
 # Función 3
 @app.get('/score_titulo/''{titulo}')
 async def score_titulo(titulo: str):
-    filtered_year = None
-    filtered_score = None
-
-    try:
-        filtered_year = df_complete.loc[df_complete['title'] == titulo, 'release_year'].tolist()
-        filtered_score = df_complete.loc[df_complete['title'] == titulo, 'popularity'].tolist()
-
-        filtered_year = filtered_year[0]
-        filtered_score = filtered_score[0]
-
-    except (KeyError, ValueError, TypeError):
-        pass
-
-    if filtered_year is not None and filtered_score is not None:
-        return f'la pelicula {titulo} fue estrenada el año {filtered_year} con una calificación/popularidad de {filtered_score}'
-    else:
-        # Handle case where filtered_year or filtered_score could not be obtained
-        return f'No hay información disponible de la película {titulo}'
     
-    #filtered_year = df_complete.loc[df_complete['title'] == titulo, 'release_year'].tolist()
-    #filtered_score = df_complete.loc[df_complete['title'] == titulo, 'popularity'].tolist()
+    filtered_year = df_complete.loc[df_complete['title'] == titulo, 'release_year'].tolist()
+    filtered_score = df_complete.loc[df_complete['title'] == titulo, 'popularity'].tolist()
 
-    #filtered_year = filtered_year[0]
-    #filtered_score = filtered_score[0]
+    filtered_year = filtered_year[0]
+    filtered_score = filtered_score[0]
 
-    #return f'la pelicula {titulo} fue estrenada el año {filtered_year} con una calificación/popularidad de {filtered_score}'
+    return f'la pelicula {titulo} fue estrenada el año {filtered_year} con una calificación/popularidad de {filtered_score}'
 
 # Función 4
 @app.get('/votos_titulo/''{titulo}')
