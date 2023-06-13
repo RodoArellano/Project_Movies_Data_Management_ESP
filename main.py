@@ -2,7 +2,6 @@ from fastapi import FastAPI
 import numpy as np
 import pandas as pd
 
-#df_complete = pd.read_csv(r'C:\Users\rodal\Documents\Henry_DS_FT_11\Course_HW\Proyecto_Movies_1\ETL_Project_1\complete_movies_and_credits_db.csv', sep=',')
 df_complete = pd.read_csv('https://github.com/RodoArellano/Proyecto_Movies_1/blob/main/complete_movies_and_credits_d.csv', sep=',', lineterminator='\r', low_memory=False)
 
 app = FastAPI()
@@ -17,10 +16,6 @@ def index():
             ,'5':'get_actor/nombre_actor'
             ,'6':'get_director/nombre_director'
             ,'7':'recomendación/pelicula_por_buscar'} 
-
-@app.get('/columnas/')
-async def columnas():
-    return df_complete.columns
 
 # Función 1
 @app.get('/cantidad_filmaciones_mes/''{mes}')
@@ -42,15 +37,33 @@ async def cantidad_filmaciones_dia(dia):
 
 # Función 3
 @app.get('/score_titulo/''{titulo}')
-async def score_titulo(titulo):
+async def score_titulo(titulo: str):
+    filtered_year = None
+    filtered_score = None
 
-    filtered_year = df_complete.loc[df_complete['title'] == titulo, 'release_year'].tolist()
-    filtered_score = df_complete.loc[df_complete['title'] == titulo, 'popularity'].tolist()
+    try:
+        filtered_year = df_complete.loc[df_complete['title'] == titulo, 'release_year'].tolist()
+        filtered_score = df_complete.loc[df_complete['title'] == titulo, 'popularity'].tolist()
 
-    filtered_year = filtered_year[0]
-    filtered_score = filtered_score[0]
+        filtered_year = filtered_year[0]
+        filtered_score = filtered_score[0]
 
-    return f'la pelicula {titulo} fue estrenada el año {filtered_year} con una calificación/popularidad de {filtered_score}'
+    except (KeyError, ValueError, TypeError):
+        pass
+
+    if filtered_year is not None and filtered_score is not None:
+        return f'la pelicula {titulo} fue estrenada el año {filtered_year} con una calificación/popularidad de {filtered_score}'
+    else:
+        # Handle case where filtered_year or filtered_score could not be obtained
+        return f'No hay información disponible de la película {titulo}'
+    
+    #filtered_year = df_complete.loc[df_complete['title'] == titulo, 'release_year'].tolist()
+    #filtered_score = df_complete.loc[df_complete['title'] == titulo, 'popularity'].tolist()
+
+    #filtered_year = filtered_year[0]
+    #filtered_score = filtered_score[0]
+
+    #return f'la pelicula {titulo} fue estrenada el año {filtered_year} con una calificación/popularidad de {filtered_score}'
 
 # Función 4
 @app.get('/votos_titulo/''{titulo}')
