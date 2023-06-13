@@ -6,7 +6,7 @@ En este proyecto se realizaron las siguientes tareas:
 4.- Se presentan las consultas en un entorno virtual utilizando FastAPI
 5.- Y se crea un video.
 
-1.- Por cuestiones de capacidad de memoria en mi cuenta Github solamente soy capaz de subir el archivo .csv ya trabajado. Dicho archivo cumple con las acciones requeridas para el MVP, pero además fue necesario eliminar columnas no utilizadas con la finalidad de reducir el peso del archivo. Dichas columnas fueron: 'tagline','origin_language','runtime','overview' y 'status'.
+1.- Por cuestiones de capacidad de memoria en mi cuenta Github solamente soy capaz de subir el archivo .csv ya trabajado. Dicho archivo cumple con las acciones requeridas para el MVP, pero además fue necesario eliminar columnas no utilizadas con la finalidad de reducir el peso del archivo. Dichas columnas fueron: 'tagline','original_language','runtime','overview' y 'status'.
 Se puede encontrar el archivo en este repositorio con el nombre de 'complete_movies_and_credits.csv'.
 
 2.- Las siete consultas/funciones disponibles son:
