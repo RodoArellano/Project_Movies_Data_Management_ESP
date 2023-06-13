@@ -52,11 +52,11 @@ Como podemos observar, la media de 'popularity' a pesar de tener valores que lle
 
 En las 2 siguientes imágenes podemos observar el comportamiento anual de los registros:
 
-budget: Se concluye que a partir del año 2000 D.C la base de datos ah sido llenada de forma más completa, obteniendo así el presupuesto de la mayoría de las películas estrenadas. Una propuesta para predecir un comportamiento sería entrenar con la información que se tiene de budget solamente después del año 2000.
-
 ![Budget_trough_years](https://github.com/RodoArellano/Proyecto_Movies_1/assets/125421658/cab82ea7-0012-449b-922c-cf213678f019)
 
-popularity: Podemos concluir que al paso de los años tenemos una tendencia creciente en la popularidad de las películas, es decir que se están produciendo más películas que la audiencia opina son de alta calidad.
+budget: Se concluye que a partir del año 2000 D.C la base de datos ah sido llenada de forma más completa, obteniendo así el presupuesto de la mayoría de las películas estrenadas. Una propuesta para predecir un comportamiento sería entrenar con la información que se tiene de budget solamente después del año 2000.
 
 ![Popularity_trough_years](https://github.com/RodoArellano/Proyecto_Movies_1/assets/125421658/61456889-87ea-470a-beb3-4e45cf000bd0)
+
+popularity: Podemos concluir que al paso de los años tenemos una tendencia creciente en la popularidad de las películas, es decir que se están produciendo más películas que la audiencia opina son de alta calidad.
 
