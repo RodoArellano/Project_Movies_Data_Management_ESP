@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 
 #df_complete = pd.read_csv(r'C:\Users\rodal\Documents\Henry_DS_FT_11\Course_HW\Proyecto_Movies_1\ETL_Project_1\complete_movies_and_credits_db.csv', sep=',')
-df_complete = pd.read_csv('https://github.com/RodoArellano/Proyecto_Movies_1/blob/main/complete_movies_and_credits_d.csv', sep=',', lineterminator='\r')
+df_complete = pd.read_csv('https://github.com/RodoArellano/Proyecto_Movies_1/blob/main/complete_movies_and_credits_d.csv', sep=',', lineterminator='\r', low_memory=False)
 
 app = FastAPI()
 
@@ -20,7 +20,7 @@ def index():
 
 @app.get('/columnas/')
 async def columnas():
-    print(df_complete.columns)
+    return df_complete.columns
 
 # Función 1
 @app.get('/cantidad_filmaciones_mes/''{mes}')
