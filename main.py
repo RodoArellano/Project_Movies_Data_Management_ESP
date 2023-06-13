@@ -20,7 +20,7 @@ def index():
 
 @app.get('/columnas/')
 async def columnas():
-    return df_complete.columns
+    print(df_complete.columns)
 
 
 
