@@ -5,7 +5,6 @@ import pandas as pd
 #df_complete = pd.read_csv(r'C:\Users\rodal\Documents\Henry_DS_FT_11\Course_HW\Proyecto_Movies_1\ETL_Project_1\complete_movies_and_credits_db.csv', sep=',')
 df_complete = pd.read_csv('https://github.com/RodoArellano/Proyecto_Movies_1/blob/main/complete_movies_and_credits.csv', sep=',', lineterminator='\r')
 
-df_complete['belongs_to_collection'] = df_complete['belongs_to_collection'].str.replace('\n', '')
 df_complete['genres'] = df_complete['genres'].str.replace('\n', '')
 df_complete['production_companies'] = df_complete['production_companies'].str.replace('\n', '')
 df_complete['production_countries'] = df_complete['production_countries'].str.replace('\n', '')
