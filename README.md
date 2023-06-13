@@ -61,3 +61,10 @@ budget: Se concluye que a partir del año 2000 D.C la base de datos ah sido llen
 
 popularity: Podemos concluir que al paso de los años tenemos una tendencia creciente en la popularidad de las películas, es decir que se están produciendo más películas que la audiencia opina son de alta calidad.
 
+4.- Link para el entorno virtual de render:
+
+https://proyecto-movies-1-0.onrender.com/
+
+5.- Link para el video:
+
+https://www.youtube.com/watch?v=9eKGsc9QU88
