@@ -1,8 +1,9 @@
 from fastapi import FastAPI
 import numpy as np
 import pandas as pd
+import os
 
-df_complete = pd.read_csv('https://github.com/RodoArellano/Proyecto_Movies_1/blob/main/complete_movies_and_credits_d.csv', sep=',', lineterminator='\r', low_memory=False)
+df_complete = pd.read_csv('https://github.com/RodoArellano/Proyecto_Movies_1/blob/main/complete_movies_and_credits_d.csv', sep=',', encoding='utf-8')
 
 app = FastAPI()
 
