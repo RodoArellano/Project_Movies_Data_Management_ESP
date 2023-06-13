@@ -35,7 +35,7 @@ async def cantidad_filmaciones_mes(mes):
     except (KeyError, ValueError, TypeError):
         pass
 
-    if filtered_year is not None and filtered_score is not None:
+    if filtered_values is not None and count_values is not None:
         return f'En el mes de {mes} se han estrenaron {count_values} películas.'
     else:
         # Handle case where filtered_year or filtered_score could not be obtained
