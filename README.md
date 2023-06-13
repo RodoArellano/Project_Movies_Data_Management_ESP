@@ -31,15 +31,18 @@ Como podemos obserbar en la primera imagen mostrada a continuación, se tiene un
 
 Para tener un mejor análisis se presenta la misma gráfica sin tomar en cuenta los outliers de 'popularity':
 ![Scatter1_without_outliers](https://github.com/RodoArellano/Proyecto_Movies_1/assets/125421658/4a9e53db-8eb1-4576-9e4b-a13aaa5426c0)
+
 Ahora podemos observar una agrupación más extendida, de la cual podemos notar que la cantidad invertida en 'budget' en realidad no es directamente proporcional a la popularidad de la filmación.
 
 Ahora, si analizamos las siguientes 2 imagenes podremos ver que la mayoría de las valoraciones se encuentran más cercanas a las películas sin presupuesto registrado en la base de datos (budget = 0). Debido a esto podemos concluir que a menos que descartemos las películas sin registro de presupuesto no vamos a tener una relación certera entre la popularidad y el presupuesto.
 ![Scatter1_without_outliers_grouped](https://github.com/RodoArellano/Proyecto_Movies_1/assets/125421658/1603a7d5-e44f-4cd8-ae5a-faa77ba62d36)
 ![Popularity_density](https://github.com/RodoArellano/Proyecto_Movies_1/assets/125421658/2354a631-731a-4d4a-89ab-773a166e0b0a)
+
 Dicho esto, si procedieramos a ignorar dichas películas nuestra base de datos perdería la mayoría de sus registros.
 
 Una forma de demostrar que la tendencia es regida por la gran cantidad de registros en 0, es calculando la media:
 ![mean_budget_popularity](https://github.com/RodoArellano/Proyecto_Movies_1/assets/125421658/2f0d9091-ba70-46ba-8603-d9dde24062c4)
+
 Como podemos observar, la media de 'popularity' a pesar de tener valores que llegan a los 50 puntos se encuentra muy cercana a 0. Mismo caso con la media de 'budget'. En conclusión es necesario completar la información, o comenzar a analizar desde dónde ya se comienza a registrar correctamente, lo que nos lleva a incluir una liena del tiempo anual de los registros.
 
 En las 2 siguientes imágenes podemos observar el comportamiento anual de los registros:
