@@ -20,27 +20,11 @@ def index():
 # Función 1
 @app.get('/cantidad_filmaciones_mes/''{mes}')
 async def cantidad_filmaciones_mes(mes):
-    filtered_values = None
-    count_values = None
     
-    #filtered_values = df_complete.loc[df_complete['release_month'] == mes, 'title'].tolist()
-    #count_values = len(filtered_values)
+    filtered_values = df_complete.loc[df_complete['release_month'] == mes, 'title'].tolist()
+    count_values = len(filtered_values)
 
-    #return f'En el mes de {mes} se han estrenaron {count_values} películas.'
-
-    try:
-        filtered_values = df_complete.loc[df_complete['release_month'] == mes, 'title'].tolist()
-        count_values = len(filtered_values)
-
-    except (KeyError, ValueError, TypeError):
-        pass
-
-    if filtered_values is not None and count_values is not None:
-        return f'En el mes de {mes} se han estrenaron {count_values} películas.'
-    else:
-        # Handle case where filtered_year or filtered_score could not be obtained
-        return f'En el mes de febrero se han estrenaron 3042 películas.'
-
+    return f'En el mes de {mes} se han estrenaron {count_values} películas.'
 
 # Función 2
 @app.get('/cantidad_filmaciones_dia/''{dia}')
