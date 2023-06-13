@@ -17,7 +17,12 @@ def index():
             ,'5':'get_actor/nombre_actor'
             ,'6':'get_director/nombre_director'
             ,'7':'recomendación/pelicula_por_buscar'} 
-#\n 1.-/cantidad_filmaciones_mes/mes_a_buscar 2.-/cantidad_filmaciones_mes/mes_a_buscar'
+
+@app.get('/columnas/')
+async def columnas():
+    return df_complete.columns
+
+
 
 # Función 1
 @app.get('/cantidad_filmaciones_mes/''{mes}')
