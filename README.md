@@ -64,7 +64,3 @@ popularity: Podemos concluir que al paso de los años tenemos una tendencia crec
 4.- Link para el entorno virtual de render:
 
 https://proyecto-movies-1-0.onrender.com/
-
-5.- Link para el video:
-
-https://www.youtube.com/watch?v=9eKGsc9QU88
