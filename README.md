@@ -1,4 +1,4 @@
-# Proyecto_Movies_1
+# Proyecto_Manejo_de_dataset_Movies
 En este proyecto se realizaron las siguientes tareas: 
 1.- la limpieza y normalización de una base de datos de películas
 2.- Siete funciones diferentes para recibir información específica (querys)
